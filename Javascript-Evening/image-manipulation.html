@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<script>
+			function one()
+			{
+				document.getElementById("photo1").height=100;
+				document.getElementById("photo1").width=100;
+			}
+			function two()
+			{
+				document.getElementById("photo1").height=300;
+				document.getElementById("photo1").width=300;
+			}
+			function three()
+			{
+				document.getElementById("photo1").height=500;
+				document.getElementById("photo1").width=500;
+			}
+			function hello(photoname)
+			{
+				document.getElementById("photo1").src=photoname;
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<h2> input Field Manipulation Example </h2>
+			<p>
+				<img src="1.jpg" id="photo1" height="200" width="300">
+			</p>
+			<p>
+				<button onclick="one()"> Image Small 100/100 </button>
+				<button onclick="two()"> Image Medium 300/300 </button>
+				<button onclick="three()"> Image Large 500/500 </button>
+				
+			</p>
+			
+			<img src="1.jpg" height="40" width="40" onclick="hello(this.src)">
+			<img src="2.jpg" height="40" width="40" onclick="hello(this.src)">
+			<img src="3.jpg" height="40" width="40" onclick="hello(this.src)">
+			<img src="4.jpg" height="40" width="40" onclick="hello(this.src)">
+			<img src="5.jpg" height="40" width="40" onclick="hello(this.src)">
+			<img src="6.jpg" height="40" width="40" onclick="hello(this.src)">
+			
+		</center>
+	</body>
+</html>

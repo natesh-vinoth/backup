@@ -1,0 +1,141 @@
+<html>
+	<head>
+		<title> Conditions in JS </title>
+		<script>
+			function one()
+			{
+				var a=prompt("Enter Any Number");
+				if(isNaN(a))
+				{
+					document.getElementById("msg").innerHTML=a+" : is String Data Types";
+				}
+				else
+				{
+					document.getElementById("msg").innerHTML=a+" : is Number Data Types";
+				}
+			}
+			
+			function two()
+			{
+				var a=prompt("Enter 1st Number");
+				var b=prompt("Enter 2nd Number");
+				var c=prompt("Enter 3rd Number");
+				a=parseInt(a);
+				b=parseInt(b);
+				c=parseInt(c);
+				if((a>b) && (a>c))
+				{
+					document.getElementById("msg").innerHTML=a+ ":is Greatest Number";
+				}
+				else if(b>c)
+				{
+					document.getElementById("msg").innerHTML=b+ ":is Greatest Number";
+				}
+				else
+				{
+					document.getElementById("msg").innerHTML=c+ ":is Greatest Number";
+				}
+			}
+			
+			/*function three()
+			{
+				var a=prompt("Enter 1st Number");
+				var b=prompt("Enter 2nd Number");
+				var c=prompt("Enter 3rd Number");
+				a=parseInt(a);
+				b=parseInt(b);
+				c=parseInt(c);
+				
+				if(a>b)
+				{
+					if(a>c)
+					{
+						document.getElementById("msg").innerHTML=a+ ":is Greatest Number";
+					}
+					else
+					{
+						document.getElementById("msg").innerHTML=c+ ":is Greatest Number";
+					}
+				}
+				else
+				{
+					document.getElementById("msg").innerHTML=b+ ":is Greatest Number";
+				}
+			}*/
+			
+			function three()
+			{
+				var a=prompt("Enter 1st Number");
+				a=a.trim();
+				if((a!="") && (a!=null))
+				{
+					if(isNaN(a))
+					{
+						var msg=a+": is String and Length is:" +a.length;
+					}
+					else
+					{
+						var a=parseInt(a);
+						if(a%2==0)
+						{
+							var msg=a+": is Number and Even";
+						}
+						else
+						{
+							var msg=a+": is Number and Odd";
+						}
+					}
+				}
+				else
+				{
+					var msg="It is Invalid Entry !! Try Again";
+				}
+				document.getElementById("msg").innerHTML=msg;
+			}
+			
+			function four()
+			{
+				var input=prompt("Enter Between 1 to 5");
+				input=parseInt(input);
+				switch(input)
+				{
+					case 1:
+						alert("Your Input is: "+input);
+						break;
+						
+					case 2:
+						alert("Your Input is: "+input);
+						break;
+						
+					case 3:
+					case 4:
+						alert("Your Input is: "+input);
+						break;
+						
+					/*case 4:
+						alert("Your Input is: "+input);
+						break;*/
+						
+					case 5:
+						alert("Your Input is: "+input);
+						break;
+						
+					default:
+					alert("Pls Enter Between 1 to 5");
+					four();
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<h2> Javascript Condition Example </h2>
+			<button onclick="one()"> If-Else </button>
+			<button onclick="two()"> If-Else If </button>
+			<button onclick="three()"> Nested If </button>
+			<button onclick="four()"> Switch Case </button>
+			<br><br>
+			<div id="msg"></div>
+		</center>
+	</body>
+</html>

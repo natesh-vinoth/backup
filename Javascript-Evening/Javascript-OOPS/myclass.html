@@ -1,0 +1,142 @@
+<html>
+    <head>
+        <script>
+            class Parent
+            {
+                constructor()
+                {
+                    this.pname="Hello Father";
+                    this.mobile=9876543210;
+                    this.age="30 Years";
+                }
+
+                get pdetails()
+                {
+                    var data = "<p> Parent Name : " +this.pname + "</p>";
+                    data += "<p> Parent Mobile : " +this.mobile + "</p>";
+                    data += "<p> Parent Age : " +this.age + "</p>";
+                    document.getElementById("pdata").innerHTML = data;
+                }
+            }
+
+            class Child extends Parent
+            {
+                constructor()
+                {
+                    super();
+                    this.cname="Hello Child";
+                    this.cage="10 Years";
+                    this.edu="STD - 5";
+
+                }
+
+                get cdetails()
+                {
+                    var data = "<p> Child Name : " +this.cname + "</p>";
+                    data += "<p> Child Age : " +this.cage + "</p>";
+                    data += "<p> Child Education : " +this.edu + "</p>";
+                    data += "<p> Parent Name : " +this.pname + "</p>";
+                    data += "<p> Parent Mobile : " +this.mobile + "</p>";
+                    data += "<p> Parent Age : " +this.age + "</p>";
+                    document.getElementById("cdata").innerHTML = data;
+                }
+
+                get one()
+                {
+                    this.pdetails;
+                    this.cdetails;
+                }
+
+                get two()
+                {
+                    // For Parent
+                    this.pname = document.getElementById("pname").value;
+                    this.mobile = document.getElementById("mobile").value;
+                    this.age = document.getElementById("age").value;
+
+                    // For Child
+                    this.cname = document.getElementById("cname").value;
+                    this.cage = document.getElementById("cage").value;
+                    this.edu = document.getElementById("edu").value;
+
+                    //this.one(); // After Update Reload The List 
+                }
+
+                get clearall()
+                {
+                    document.getElementById("pname").value="";
+                    document.getElementById("mobile").value="";
+                    document.getElementById("age").value="";
+                    document.getElementById("cname").value="";
+                    document.getElementById("cage").value="";
+                    document.getElementById("edu").value="";
+                }
+            }
+
+            const obj = new Child();
+        </script>
+    </head>
+    <body>
+        <h1 align="center"> Inheritance Example 2 </h1>
+        <table align="center" cellpadding="10">
+            <tr>
+                <td bgcolor="pink">
+                    <table cellpadding="6">
+                        <caption> <b>Parent Details</b> </caption>
+                        <tr>
+                            <th> Name </th>
+                            <td> <input type="text" id="pname"> </td>
+                        </tr>
+                        <tr>
+                            <th> Mobile No </th>
+                            <td> <input type="text" id="mobile"> </td>
+                        </tr>
+                        <tr>
+                            <th> Age </th>
+                            <td> <input type="text" id="age"> </td>
+                        </tr>
+                    </table>
+                </td> <!-- 1st td End -->
+
+                <td bgcolor="skyblue">
+                    <table cellpadding="6">
+                        <caption> <b>Child Details</b> </caption>
+                        <tr>
+                            <th> Name </th>
+                            <td> <input type="text" id="cname"> </td>
+                        </tr>
+                        <tr>
+                            <th> Age </th>
+                            <td> <input type="text" id="cage"> </td>
+                        </tr>
+                        <tr>
+                            <th> Education </th>
+                            <td> <input type="text" id="edu"> </td>
+                        </tr>
+                    </table>
+
+                    <tr>
+                            <th colspan="2">
+                                <button onclick="obj.two"> Update Details </button>
+                                <button onclick="obj.one"> Show Details </button>
+                                <button onclick="obj.clearall"> Clear All </button>
+                            </th>
+                    </tr>
+                </td> <!-- 2nd td End -->
+            </tr>
+        </table>
+        
+        <table align="center" cellpadding="10">
+            <caption> Both Details </caption>
+            <tr>
+                <td bgcolor="orange">
+                    <div id="pdata"> Parent Data Will Come Here </div>
+                </td>
+
+                <td bgcolor="green">
+                    <div id="cdata"> Child Data Will Come Here </div>
+                </td> <!-- 3rd td End -->
+            </tr>
+        </table>
+    </body>
+</html>

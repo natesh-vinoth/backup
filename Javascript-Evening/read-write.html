@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<script>
+			function one()
+			{
+				document.getElementById("box1").disabled=true;
+			}
+			function two()
+			{
+				document.getElementById("box1").disabled=false;
+			}
+			function three()
+			{
+				document.getElementById("box1").size=200;
+			}
+			function four()
+			{
+				document.getElementById("box1").size=50;
+			}
+			function five()
+			{
+				document.getElementById("btn1").innerHTML="Please Wait!....";
+			}
+			function six()
+			{
+				document.getElementById("btn2").style.display="none";
+			}
+			function seven()
+			{
+				document.getElementById("box1").style.borderColor="red";
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<h2> input Field Manipulation Example </h2>
+			<p>
+				<input type="text" id="box1">
+			</p>
+			<p>
+				<button onclick="one()"> Disabled </button>
+				<button onclick="two()"> Enabled </button>
+				<button onclick="three()"> Resize </button>
+				<button onclick="four()"> Resize Less</button>
+				<button onclick="five()" id="btn1"> Click Here</button>
+			</p>
+			
+			<button onclick="six()" id="btn2"> Click Here to Hide</button>
+			<button onclick="seven()" id="btn3"> Click Here to Change Color</button>
+		</center>
+	</body>
+</html>

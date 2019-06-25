@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<title> Multiple Loop </title>
+		<script>
+			function getdata(limit)
+			{
+				var data="";
+				for(var i=1; i<=limit; i++)
+				{
+					data=data+"*";
+				}
+				return data;
+				//alert(data);
+			}
+			
+			function one()
+			{
+				var mydata="";
+				for(var i=1; i<=10; i++)
+				{
+					//alert(getdata(i));
+					mydata=mydata+getdata(i);
+					mydata=mydata+"<br>";
+				}
+				//alert(mydata);
+				document.getElementById("msg").innerHTML=mydata;
+			}
+			
+			function getdata2(limit)
+			{
+				var data="";
+				for(var i=1; i<=limit; i++)
+				{
+					data=data+"*";
+				}
+				return data;
+				//alert(data);
+			}
+			
+			function two()
+			{
+				var mydata="";
+				for(var i=10; i>=1; i--)
+				{
+					//alert(getdata(i));
+					mydata=mydata+getdata2(i);
+					mydata=mydata+"<br>";
+				}
+				//alert(mydata);
+				document.getElementById("msg").innerHTML=mydata;
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<h2> Javascript MultLoop Example </h2>
+		</center>
+		<button onclick="one()"> Run the Loop Asc </button>
+		<button onclick="two()"> Run the Loop Desc </button>
+		
+		<div id="msg"> Nothing.... </div>
+	</body>
+</html>

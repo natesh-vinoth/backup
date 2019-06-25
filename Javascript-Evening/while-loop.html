@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title> While Loop </title>
+		<script>
+			function whileloop()
+			{
+				var data="";
+				var counter=1;
+				while(counter<=10)
+				{
+					if(counter %2 == 0)
+					{
+						data=data + counter + "####" + (counter+counter) + "<br>";
+					}
+					else
+					{
+						data=data + counter + "####" + (counter*counter) + "<br>";
+					}
+					counter++;
+				}
+				document.getElementById("msg").innerHTML=data;
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<h2> While Loop </h2>
+		</center>
+		<button onclick="whileloop()"> While Loop </button>
+		
+		<div id="msg"></div>
+	</body>
+</html>

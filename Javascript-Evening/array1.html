@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title> Array Example </title>
+		<script>
+			var item=["Apple","Orange","Mango","Banana"];
+			/*function one()
+			{
+				alert(item[0]+"----"+item[0].length);
+				alert(item[1]+"----"+item[1].length);
+				alert(item[2]+"----"+item[2].length);
+				alert(item[3]+"----"+item[3].length);
+			}*/
+			
+			function one()
+			{
+				var data="";
+				for(var i=0; i<item.length; i++)
+				{
+					//alert(item[i]+"----"+item[i].length);
+					data=data + "<p>" + item[i] + "-----" + item[i].length + "</p>";
+				}
+				document.getElementById("msg").innerHTML=data;
+			}
+			
+			function two()
+			{
+				var data="";
+				for(var i=0; i<item.length; i++)
+				{
+					//alert(item[i]+"----"+item[i].length);
+					data=data + "<option>" + item[i] + "-----" + item[i].length + "</option>";
+				}
+				document.getElementById("product").innerHTML=data;
+			}
+			
+		</script>
+	</head>
+	<body>
+		<center>
+			<h2> Javascript Array Example </h2>
+		</center>
+		<button onclick="one()"> Show Array </button>
+		<button onclick="two()"> Load Item in List </button>
+		
+		<div id="msg"></div><br>
+		
+		Item : <select id="product">
+			<option> Choose </option>
+		</select>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <script>
+            class Test
+            {
+                constructor()
+                {
+                    this.timeobj = new Date();
+                }
+
+                get hour()
+                {
+                    return this.timeobj.getHours();
+                }
+
+                get minute()
+                {
+                    return this.timeobj.getMinutes();
+                }
+            }
+
+            class Test2 extends Test
+            {
+                constructor()
+                {
+                    super();
+                }
+
+                get seconds()
+                {
+                    return this.timeobj.getSeconds();
+                }
+
+                get currentTime()
+                {
+                    var a= "Time is " + this.hour + ":" + this.minute + ":" + this.seconds;
+                    document.getElementById("time").innerHTML=a;
+                }
+            }
+
+            const obj = new Test2();
+        </script>
+    </head>
+    <body>
+        <h1 id="time"></h1>
+        <button onclick="obj.currentTime"> What is the Current Time </button>
+    </body>
+</html>

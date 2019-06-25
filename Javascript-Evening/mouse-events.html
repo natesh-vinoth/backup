@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<script>
+			function test()
+			{
+				alert("Hi.. this is working..");
+			}
+		</script>
+	</head>
+	<body onload="test()">
+	<center>
+		<h1>Mouse Events Example</h1>
+		<button onclick="test()">1-click</button>
+		<button ondblclick="test()">2-click</button>
+		<button onmousemove="test()">Move mouse here</button>
+		<button onmouseout="test()">Touch & Move out</button>
+		onchange: <select onchange="test()">
+						<option>choose</option>
+						<option>Banglore</option>
+						<option>Pune</option>
+					</select>
+		<hr color="red" size="5">
+		<h1>Keyboard Events Example</h1>
+		onkeypress: <input type="text" onkeypress="test()"><br><br>
+		onkeyup: <input type="text" onkeyup="test()"><br><br>
+		onfocus: <input type="text" onfocus="test()"><br><br>
+		<!--as focus will comes-->
+		onblur: <input type="text" onblur="test()"><br><br>
+		<!--as cursor will move out-->
+	</center>
+	</body>
+</html>

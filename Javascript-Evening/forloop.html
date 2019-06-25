@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title> For Loop </title>
+		<script>
+			function forloopasc()
+			{
+				var data="";
+				var data1=0;
+				for(var i=0; i<=5; i++)
+				{
+					data=data+i;
+					data1=data1+i;
+				}
+				//alert(data);
+				//alert(data1);
+				var finaloutput=data +"<hr>" +data1;
+				document.getElementById("msg").innerHTML=finaloutput;
+			}
+			
+			function forloopdesc()
+			{
+				var data="<ul type='square'>";
+					for(var i=1; i<=10; i++)
+					{
+						data=data+"<li>"+i+"</li>\n";
+					}
+				data=data+"</ul>";
+				document.getElementById("msg").innerHTML=data;
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<h2> For Loop </h2>
+		</center>
+		<button onclick="forloopasc()"> For Loop Ascending </button>
+		<button onclick="forloopdesc()"> For Loop Descending </button>
+		
+		<div id="msg"></div>
+	</body>
+</html>

@@ -1,0 +1,82 @@
+<html>
+	<head>
+		<title> Array One Example </title>
+		<link rel="stylesheet" href="dist/css/bootstrap.css">
+		<script>
+			var item = ["Apple","Orange","Grapes"];
+			function one()
+			{
+				var newitem = document.getElementById("itemname").value;
+				item.push(newitem);
+				//two(); //to get length
+				document.getElementById("itemname").value=""; // Set Empty
+				document.getElementById("msg").innerHTML="Item Added Successfull";
+			}
+			
+			function two()
+			{
+				//alert("Total item is :" +item.length);
+				var temp = "";
+				for(var i=0; i<item.length; i++)
+				{
+					temp = temp + "<div class='col-md-3'> <p class='well'>" + item[i] + "</p> <button class='btn btn-danger btn-sm' onclick='delany("+i+")'> Delete </button> </div>"; // Both first and second is correct
+					// temp+="<p>" + item[i] + "</p>";
+				}
+				//alert(temp);
+				document.getElementById("itemlist").innerHTML=temp;
+			}
+			
+			function del1st()
+			{
+				item.shift(); // to delete 1st element
+				document.getElementById("msg").innerHTML="Item Deleted Successfull";
+				two();
+			}
+			
+			function dellast()
+			{
+				item.pop(); // to delete 1st element
+				document.getElementById("msg").innerHTML="Item Deleted Successfull";
+				two();
+			}
+			
+			function delany(index)
+			{
+				var status=confirm("Are You Sure");
+				var itemname=item[index];
+				if(status==true)
+				{
+					item.splice(index,1); /*splice function is to add and delete. To add we need to pass 0 and need 3 parameter 
+					& delete we need to add 1 and need 2 parameter */
+					document.getElementById("msg").innerHTML=itemname +" Deleted Successfull";
+					two();
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-md-7"> <h3> Array One Example </h3> </div>
+				<div class="col-md-5"> <h3 id="msg">  </h3> </div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-3 well">
+					<label> New Element Name </label>
+					<input type="text" id="itemname" class="form-control input-sm">
+					<br>
+					<button class="btn btn-primary" onclick="one()"> Save </button>
+					<button class="btn btn-success" onclick="two()"> Display </button>
+					<hr>
+					<button class="btn btn-warning" onclick="del1st()"> Delete First </button>
+					<hr>
+					<button class="btn btn-danger" onclick="dellast()"> Delete Last </button>
+				</div>
+				<div class="col-md-9 text-center" id="itemlist">
+					<p> 0 Item ! </p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

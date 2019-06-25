@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<script>
+			function one()
+			{
+				alert("Your Email send successfully");
+				//alert(): use to give confirmation to user 
+			}
+			function two()
+			{
+				var a=confirm("Are You Sure?");
+				alert(a);
+				//confirm() :used to ask the confirmation form user before processing
+			}
+			function three()
+			{
+				var a=prompt("Enter your Email id");
+				alert(a);
+				//prompt():used to ask user input
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<h2>Javascript Example for pop-up window</h2>
+			<button onclick="one()">click for Alert</button>
+			<button onclick="two()">click for confirm</button>
+			<button onclick="three()">click & download</button>
+		</center>
+	</body>
+</html>

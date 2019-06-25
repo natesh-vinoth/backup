@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<script>
+			function test()
+			{
+				var male = document.getElementById("m").checked;
+				var female = document.getElementById("f").checked;
+				alert("Male is:" +male);
+				alert("Female is:" +female);
+			}
+			
+			function test1()
+			{
+				var a=document.getElementById("tnc").checked;
+				var b=document.getElementById("tnc").value;
+				alert(a);
+				alert(b);
+				
+				document.getElementById("tnc").checked=false;
+				document.getElementById("tnc").value="Hello Test";
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<h2> Radio Button & Check Box Communication with JS </h2>
+			<div>
+				<input type="radio" name="gender" id="m" value="Male"> Male
+				<input type="radio" name="gender" id="f" value="Female"> Female
+				<br><br>
+				<button onclick="test()"> Check Gender</button>
+			</div>
+			
+			<div>
+				<input type="checkbox" id="tnc" name="tnc" value="yes" checked="checked"> I am agree
+				<br><br>
+				<button onclick="test1()"> Check Box Check</button>
+				<input type="text" disabled="false">
+			</div>
+		</center>
+	</body>
+</html>

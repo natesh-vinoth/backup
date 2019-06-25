@@ -1,0 +1,126 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="dist/css/bootstrap.css">
+		<script>
+		
+		</script>
+	</head>
+	<body class="bg-success" onload="getitem()">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8">
+					<h4> Javascript Multi Dimensional Array Examples </h4>
+				</div>
+				<div class="col-sm-4">
+					<h4 id="total"> Total Item - 0 </h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="panel panel-primary">
+						<div class="panel panel-heading"> New Item </div>
+						<div class="panel panel-body">
+							<div class="form-group">
+								<label> Item Name </label>
+								<input type="text" id="name" class="form-control input-sm"> 
+							</div>
+							<div class="form-group">
+								<label> Item Price </label>
+								<input type="number" id="price" class="form-control input-sm"> 
+							</div>
+							<div class="form-group">
+								<label> Item Quantity </label>
+								<input type="number" id="qty" class="form-control input-sm"> 
+							</div>
+							<div class="text-center form-group">
+								<button class="btn btn-success btn-sm btn-block" onclick="saveitem()"> Save Item </button>
+							</div>
+							<div class="text-center form-group">
+								<button class="btn btn-danger btn-sm btn-block" onclick="getitem()"> Show Item </button>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-sm-9 well">
+					<table class="table table-bordered table-hover">
+						<thead class="text-danger">
+							<tr>
+								<th> Item Name </th>
+								<th> Item Price </th>
+								<th> Item Quantity </th>
+								<th> Total Price </th>
+								<th> Action </th>
+							</tr>
+						</thead>
+						
+						<tbody id="itemlist">
+							<tr>
+								<td colspan="5" class="text-center"> No Record ! </td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div> 
+		</div>
+		
+		<script>
+			var item = [
+							{"name":"Apple", "price":200, "qty":5},
+							{"name":"Orange", "price":150, "qty":7},
+							{"name":"Mango", "price":90, "qty":4},
+							{"name":"Grapes", "price":70, "qty":15}
+					   ];
+			
+			function getitem()
+			{
+				//alert(item.length);
+				
+				var data="";
+				for(i=0; i<item.length; i++)
+				{
+					data+="<tr>\n";
+						data+="<td>"+item[i].name+"</td>\n";
+						data+="<td>"+item[i].price+"</td>\n";
+						data+="<td>"+item[i].qty+"</td>\n";
+						data+="<td>"+(item[i].qty * item[i].price) +"</td>\n";
+						data+="<td> <button onclick='delitem("+i+")'> Del </button> </td> \n";
+					data+="</tr> \n";
+				}
+				//alert(data);
+				document.getElementById("itemlist").innerHTML=data;
+				document.getElementById("total").innerHTML="Total Item - " + item.length;
+			}
+			
+			function saveitem()
+			{
+				var n = document.getElementById("name").value;
+				var p = document.getElementById("price").value;
+				var q = document.getElementById("qty").value;
+				
+				var newarray = {"name":n, "price":p, "qty":q};
+				item=item.concat(newarray);
+				getitem(); //to reload the itemlist
+				
+				document.getElementById("name").value="";
+				document.getElementById("price").value="";
+				document.getElementById("qty").value="";
+				
+			}
+			
+			function delitem(index)
+			{
+				var status=confirm("Are You Sure");
+				var itemname=item[index];
+				if(status==true)
+				{
+					item.splice(index,1);
+					document.getElementById("itemlist").innerHTML=itemname +" Deleted Successfull";
+					getitem();
+				}
+			}
+			
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,46 @@
+-variable and data types
+-popup window
+	alert
+	confirm
+	prompt
+-function
+-events
+	the type of user interaction is known as events.
+	Types of events category
+		1.Mouse
+			a.onclick
+			b.ondblclick
+			c.onmousedown
+			d.onmousemove
+			e.onmouseout
+			f.onchange
+		2.keyboard
+			a.onkeypress
+			b.onkeyup
+			c.onfocus
+			d.onblur
+		3.form
+			a.onsubmit
+		4.body
+			a.onload
+------------------------------------------
+-data binding
+-control structure
+	condition 
+	loop
+		For Loop
+		While Loop
+		Do While Loop
+		Multi Loop
+-array
+	single
+	multi
+-JSON
+	local
+	external
+-AJAX
+	with json parsing
+	with internal and external json
+Form validation
+Javascript object oriented programing
+Typescript

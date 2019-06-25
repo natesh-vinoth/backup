@@ -1,0 +1,30 @@
+ <!-- div to div communication -->
+ 
+ <html>
+	<head>
+		<script>
+			function pickdata()
+			{
+				var a = document.getElementById("p1").innerHTML;
+				document.getElementById("p2").innerHTML=a;
+				
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<h2> Javascript .innerHTML Property Example </h2>
+			<p id="p1">
+				iejoewj opjepodpjd poijefpoweoj efdpwjpjewfupoewjf <br>
+				<img src="1.jpg" height="100" width="100">
+				<i> offjwpoej;mfcdpepopfcoeojfejfpoeofj </i> <br>
+				<u> eoiweieoiwoiheoiueuwyf8yeiwohfoieoiewfh </u>
+			</p>
+			
+			<button onclick="pickdata()"> Pick Data </button>
+			
+			<p id="p2"> No Data </p>
+		</center>
+	</body>
+ </html>
+ 
