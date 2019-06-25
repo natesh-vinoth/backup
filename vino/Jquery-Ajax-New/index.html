@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="dist/css/bootstrap.css">
+        <link rel="stylesheet" href="fa/css/all.css">
+        <script src="dist/js/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row jumbotron" style="padding: 20px;">
+                <div class="col-md-2">
+                    <img src="images/im1.jpg" class="img-responsive img-rounded">
+                    <b> Mr. Alex </b>
+                </div>
+                <div class="col-md-7">
+                    <br><br>
+                    <ul class="nav nav-tabs">
+                        <li class="active"> <a href="" id="one"> Home </a> </li>
+                        <li> <a href="" id="two"> About Us </a> </li>
+                        <li> <a href="" id="three"> Contact Us </a> </li>
+                        <li> <a href="" id="four"> User List </a> </li>
+                        <li> <a href="" id="five"> Image List </a> </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <br><br>
+                    <b> Welcome :  </b> ABC <br>
+                    <a href=""> Logout </a>
+                </div>
+            </div>
+
+            <div class="row" style="min-height: 400px">
+                <div class="col-md-3">
+                    <ul class="list-group">
+                        <li class="list-group-item active"> Navigarion </li>
+                        <li class="list-group-item"> <a href="" id="two"> JSON Parsing </a> </li>
+                        <li class="list-group-item"> <a href="" id="three"> Search, Sort </a> </li>
+                        <li class="list-group-item"> <a href="" id="four"> Dta in Model </a> </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-9" id="ajaxblock">
+                    No Data
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12 bg-success text-center">
+                    <h4> This is Footer! </h4>
+                    <p>
+                        AJAX - Asynchronous Javascript & XML, use to read the file without re-loading the page
+                    </p>
+                </div> 
+            </div>
+        </div>
+        <script>
+            
+                $("#one").click(function(){
+                    $.ajax({
+                        url : "home.html",
+                        success : function(response){
+                            $("#ajaxblock").html(response);
+                        }
+                    });
+                });
+
+                $("#two").click(function(){
+                    $.ajax({
+                        url : "about.html",
+                        success : function(response){
+                            $("#ajaxblock").html(response);
+                        }
+                    });
+                });
+            
+        </script>   
+    </body>
+</html>

@@ -1,0 +1,235 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="dist/css/bootstrap.css">
+        <link rel="stylesheet" href="fa/css/all.css">
+        <script src="dist/js/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row form-group">
+                <div class="col-md-12 btn btn-primary">
+                    <h3 class="text-center"> Jquery Ajax Example </h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                    <ul class="list-group">
+                        <li class="list-group-item active text-center"> Jquery Ajax Navigation </li>
+                        <li class="list-group-item text-center" id="home"><a href="#"> <i class="fa fa-home" aria-hidden="true"></i> Home </a></li>
+                        <li class="list-group-item text-center" id="about"><a href="#"> About Us </a></li>
+                        <li class="list-group-item text-center" id="contact"><a href="#"> Contact Us </a></li>
+                        <li class="list-group-item text-center" id="signup"><a href="#"> Sign Up </a></li>
+                        <li class="list-group-item text-center" id="login"><a href="#"> Login </a></li>
+                        <li class="list-group-item text-center" id="gallery"><a href="#"> Gallery </a></li>
+                        <li class="list-group-item text-center" id="list"><a href="#"> User List </a></li>
+                    </ul>
+                </div>
+                <div class="col-md-8" id="pagedata"></div>
+                <div class="col-md-2">
+                        <ul class="list-group">
+                            <li class="list-group-item active text-center"> My Profile </li>
+                            <li class="list-group-item text-center" id="inbox"><a href="#"> <i class="fa fa-inbox" aria-hidden="true"></i> Inbox </a></li>
+                            <li class="list-group-item text-center" id="profile"><a href="#"> Profile </a></li>
+                            <li class="list-group-item text-center" id="eprofile"><a href="#"> <i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Profile </a></li>
+                            <li class="list-group-item text-center" id="pass"><a href="#"> Change Password </a></li>
+                            <li class="list-group-item text-center" id="logout"><a href="#"> Logout </a></li>
+                        </ul>
+                    </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+                <div class="col-md-12 text-center" id="addata"> No Preview </div>
+            </div>
+
+            <hr>
+
+            <div class="row bg-primary">
+                <div class="col-md-12 text-center">
+                    <h1> This is Footer </h1>
+                    asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf 
+                    asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf 
+                    asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf 
+                    asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf 
+                    asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf 
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $(function()
+            {
+                $("#home").click(function()
+                {
+                    $.ajax({
+                        url : "home.html", 
+                        type : "POST",
+                        success : function(response)
+                        {
+                            $("#pagedata").html(response)
+                        }
+                    });
+                });
+
+                $("#about").click(function()
+                {
+                    $.ajax({
+                        url : "about.html", 
+                        type : "POST",
+                        success : function(response)
+                        {
+                            $("#pagedata").html(response)
+                        }
+                    });
+                });
+
+                $("#contact").click(function()
+                {
+                    $.ajax({
+                        url : "contact.html", 
+                        type : "POST",
+                        success : function(response)
+                        {
+                            $("#pagedata").html(response)
+                        }
+                    });
+                });
+
+                $("#signup").click(function()
+                {
+                    $.ajax({
+                        url : "signup.html", 
+                        type : "POST",
+                        success : function(response)
+                        {
+                            $("#pagedata").html(response)
+                        }
+                    });
+                });
+
+                $("#login").click(function()
+                {
+                    $.ajax({
+                        url : "login.html", 
+                        type : "POST",
+                        success : function(response)
+                        {
+                            $("#pagedata").html(response)
+                        }
+                    });
+                });
+
+                $("#gallery").click(function()
+                {
+                    $.ajax({
+                        url : "gallery.html", 
+                        type : "POST",
+                        success : function(response)
+                        {
+                            $("#pagedata").html(response)
+                        }
+                    });
+                });
+               
+                $("#list").click(function()
+                {
+                    $.ajax({
+                        url : "list.html", 
+                        type : "POST",
+                        success : function(response)
+                        {
+                            $("#pagedata").html(response)
+                        }
+                    });
+                });
+
+                $("#inbox").click(function()
+                {
+                    $.ajax({
+                        url : "email.json", 
+                        type : "POST",
+                        dataType : "json",
+                        success : function(response)
+                        {
+                            //$("#pagedata").text(response)
+
+                            // JSON Parsing Start
+                                var data = "";
+
+                                for (var i = 0; i<response.length; i++)
+                                {
+                                    data += "<tr>";
+                                    data += "<td>" + response[i].from + "</td>";
+                                    data += "<td>" + response[i].subject + "</td>";
+                                    data += "<td>" + response[i].message + "</td>";
+                                    data += "</tr>";
+                                }
+
+                                var thead = "<tr class='danger'> <th> FROM </th> <th> SUBJECT </th> <th> MESSAGE </th> </tr>";
+                                var tableopen = "<table class = 'table table-bordered'>";
+                                var tableclose = "</table>";
+                                var alldata = tableopen + thead + data + tableclose;
+
+                                $("#pagedata").html(alldata);
+                            // JSON Parsing End
+                        }
+                    });
+                });
+
+                $("#profile").click(function()
+                {
+                    $("#pagedata").html("<h2 class='text-center'> My Profile </h2>");
+                    setTimeout(getdata, 1000);
+                });
+
+            });
+
+            var counter = 1;
+
+            function getdata()
+            {
+                switch (counter)
+                {
+                    case 1:
+                    $("#pagedata").append("<h2 class='text-center'> Contact Information </h2>");
+                    break;
+
+                    case 2:
+                    $("#pagedata").append("<h2 class='text-center'> Education Information </h2>");
+                    break;
+
+                    case 3:
+                    $("#pagedata").append("<h2 class='text-center'> Professional Information </h2>");
+                    break;
+
+                    case 4:
+                    $("#pagedata").append("<h2 class='text-center'> Working Information </h2>");
+                    break;
+                }
+
+                setTimeout(getdata, 2000); // function calling iteself
+                counter ++;
+            }
+
+        </script>
+
+        <script>
+     
+            function loadad()
+            {
+                $.ajax({
+                    type:"POST",
+                    url:"https://www.firstenquiry.com/analytics/getad.php?webid=2",
+                    success:function(response){
+                        $("#addata").html(response);
+                    }
+                });
+                setTimeout(loadad, 3000);
+            }
+        setTimeout(loadad, 1000);
+        </script>
+
+    </body>
+</html>

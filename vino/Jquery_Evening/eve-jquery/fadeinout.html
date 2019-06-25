@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<script src="dist/js/jquery.min.js"></script>
+		<script>
+			$(function(){
+					$("#btn1").click(function(){
+						$("p").fadeIn();
+					});
+                    $("#btn2").click(function(){
+						$("p").fadeOut();
+					});
+                    $("#btn3").click(function(){
+						$("p").fadeToggle();
+					});
+			});
+		</script>
+	</head>
+	<body>
+		<h4>Jquery Example For Fade in & Fade Out</h4>
+        <button id="btn1"> Fade In </button>
+        <button id="btn2"> Fade Out </button>
+        <button id="btn3"> Fade Toggle </button>
+        <p>hello p1</p>
+		<p>hello p2</p>
+		<p>hello p3</p>
+		<p>hello p4</p>
+	</body>
+</html>

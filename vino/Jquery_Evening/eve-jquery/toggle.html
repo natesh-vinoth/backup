@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<script src="dist/js/jquery.min.js"></script>
+		<script>
+			$(function(){
+					$("#btn1").click(function(){
+						$("p").toggle();
+					});
+                    $("#btn2").click(function(){
+						$("p").toggle(2000);
+					});
+                    $("#btn3").click(function(){
+						$("p").toggle("slow");
+					});
+                    $("#btn4").click(function(){
+						$("p").toggle("fast");
+					});
+			});
+		</script>
+	</head>
+	<body>
+		<h4>Jquery Example For Toggle</h4>
+        <button id="btn1"> Hide / Show - Toggle </button>
+        <button id="btn2"> Toggle with Time (MS) </button>
+        <button id="btn3"> Toggle Slow </button>
+        <button id="btn4"> Toggle Fast </button>
+        <p>hello p1</p>
+		<p>hello p2</p>
+		<p>hello p3</p>
+		<p>hello p4</p>
+	</body>
+</html>

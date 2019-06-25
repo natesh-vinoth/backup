@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<script src="dist/js/jquery.min.js"></script>
+		<script>
+			$(function(){
+					$("#btn1").click(function(){
+						$("p").after("<h3>Add Data After</h3>");
+					});
+                    $("#btn2").click(function(){
+						$("p").before("<h3>Add Data Before</h3>");
+					});
+                    $("#btn3").click(function(){
+						$("p").append("Add Data After");
+					});
+                    $("#btn4").click(function(){
+						$("p").prepend("Add Data Before");
+					});
+			});
+        </script>
+        <style>
+            p
+            {
+                padding: 50px;
+                margin: 30px;
+                width: 50%;
+                background-color: skyblue;
+                color: red;
+            }
+        </style>
+	</head>
+	<body>
+		<h4>Jquery Example For Add After / Before </h4>
+        <button id="btn1"> Add After </button>
+        <button id="btn2"> Add Before </button>
+        <button id="btn3"> Append </button>
+        <button id="btn4"> Prepend </button>
+        
+        <p> This Block will </p>
+
+        
+	</body>
+</html>

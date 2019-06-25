@@ -1,0 +1,150 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="dist/css/bootstrap.css">
+        <script src="dist/js/jquery.min.js"></script>
+        <script>
+            $(function()
+            {
+                $("#btn1").click(function()
+                {
+                    var name = $("#fname").val();
+                    if(name=="")
+                    {
+                        $("#fname").css({"border":"1px solid red"});
+                        $("#nameerror").text("Please Enter Your Name !");
+                    }
+                    else
+                    {
+                        $("#fname").css({"border":""});
+                        $("#nameerror").text("");
+                    }
+
+                    // for radio button
+
+                    if($(".gender:checked").length==0)
+                    {
+                        $("#gendererror").html("<p> Please Select Your Gender ! </p>");
+                    }
+                    else
+                    {
+                        $("#gendererror").html("");
+                    }
+
+                    // For Check Box Validation
+
+                    if($("#tnc:checked").length==0)
+                    {
+                        $("#tncerror").html("<p> Please Select Terms & Conditions ! </p>");
+                    }
+                    else
+                    {
+                        $("#tncerror").html("");
+                    }
+
+                    // For Message Error
+
+                    var msg1 = $("#msg").val();
+                    if(msg1=="")
+                    {
+                        $("#msg").css({"border":"1px solid red"});
+                        $("#msgerror").text("Please Enter Your Message!");
+                    }
+                    else
+                    {
+                        $("#msg").css({"border":""});
+                        $("#msgerror").text("");
+                    }
+
+                    // For City Error
+
+                    if($("#city:checked").length==0)
+                    {   
+                        $("#city").css({"border":"1px solid red"});
+                        $("#cityerror").html("<p> Please Select City ! </p>");
+                    }
+                    else
+                    {
+                        $("#city").css({"border":""});
+                        $("#cityerror").html("");
+                    }                    
+                });
+
+                $("#btn2").click(function()
+                {
+                    $("#fname").css({"border":""});
+                    $("#nameerror").text("");
+                    $("#fname").val("");
+                    $("#gendererror").html("");
+                    $(".gender").prop("checked",false);
+                    $("#tnc").prop("checked",false);
+                    $("#tncerror").html("");
+                    $("#msg").css({"border":""});
+                    $("#msgerror").text("");
+                    $("#msg").val("");
+                    $("#city").css({"border":""});
+                    $("#cityerror").html("");
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <h3> Form Validation Using Jquery </h3>
+
+                    <div class="form-group">
+                        <label> Full Name </label>
+                        <input type="text" class="form-control input-sm" id="fname">
+                        <i id="nameerror" class="text-danger"></i> 
+                    </div>
+
+                    <div class="form-group">
+                        <label> Gender </label>
+                        <input type="radio" class="gender" name="gender" value="Male"> Male
+                        <input type="radio" class="gender" name="gender" value="Female"> Female
+                        <i id="gendererror" class="text-danger"></i> 
+                    </div>
+
+                    <div class="form-group">
+                        <label> Terms & Condition </label> <br>
+                        <input type="checkbox" id="tnc" value="Yes"> I am Agree
+                        <i id="tncerror" class="text-danger"></i> 
+                    </div>
+
+                    <div class="form-group">
+                        <label> Message </label> <br>
+                        <textarea id="msg" class="form-control input-sm"></textarea> 
+                        <i id="msgerror" class="text-danger"></i> 
+                    </div>
+
+                    <div class="form-group">
+                        <label> City </label>
+                        <select id="city" class="form-control">
+                            <option vlaue=""> Choose </option>
+                            <option vlaue="1"> Hyderabad </option>
+                            <option vlaue="2"> Bangalore </option>
+                            <option vlaue="3"> Chennai </option>
+                            <option vlaue="4"> Madurai </option>
+                        </select>
+                        <i id="cityerror" class="text-danger"></i> 
+                    </div>
+
+                    <div class="form-group">
+                        <label> Email </label>
+                        <input type="text" id="email" class="form-control"> 
+                        <i id="tncerror" class="text-danger"></i> 
+                    </div>
+
+                    <div class="text-center">
+                        <button class="btn btn-success btn-sm" id="btn1"> Save </button>
+                        <button class="btn btn-info btn-sm" id="btn2"> Reset </button>
+                    </div>
+
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+    </body>
+</html>
